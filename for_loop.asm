@@ -26,4 +26,3 @@ exit:
 	add $a0, $s0, $zero
 	li $v0, 1
 	syscall
-________________
