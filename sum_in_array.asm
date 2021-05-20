@@ -30,7 +30,7 @@ nhap:
 	j nhap
 	
 xuat:
-	li $t1, 0                     #reset biến đếm
+	li $t1, 0                     	#reset biến đếm
            la $a2, string1
 	la $a0, string4
 	li $v0, 4
@@ -47,8 +47,8 @@ loop:
 	addi $t1, $t1, 1
 	j loop
 sum:
-	li $t1, 0                     #reset biến đếm
-           li $s3, 0                     #Sum = 0
+	li $t1, 0                     	#reset biến đếm
+           li $s3, 0                   	#Sum = 0
            la $a3, string1
 	la $a0, string7
 	li $v0, 4
