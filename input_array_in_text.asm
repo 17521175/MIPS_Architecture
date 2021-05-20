@@ -29,7 +29,7 @@ nhap:
 	
 xuat:
 	li $t1, 0                      	#reset biến đếm
-           la $a2, string1            	#đọc địa chỉ chuỗi vừa nhập vào $a2
+        la $a2, string1            	#đọc địa chỉ chuỗi vừa nhập vào $a2
 	la $a0, string4
 	li $v0, 4
 	syscall
