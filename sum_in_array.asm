@@ -31,7 +31,7 @@ nhap:
 	
 xuat:
 	li $t1, 0                     	#reset biến đếm
-           la $a2, string1
+        la $a2, string1
 	la $a0, string4
 	li $v0, 4
 	syscall
@@ -48,8 +48,8 @@ loop:
 	j loop
 sum:
 	li $t1, 0                     	#reset biến đếm
-           li $s3, 0                   	#Sum = 0
-           la $a3, string1
+        li $s3, 0                   	#Sum = 0
+        la $a3, string1
 	la $a0, string7
 	li $v0, 4
 	syscall
