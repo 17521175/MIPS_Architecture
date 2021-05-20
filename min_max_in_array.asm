@@ -10,7 +10,7 @@ string4: .asciiz "\nMin: "
 	syscall
 	li $v0, 5
 	syscall
-	move $t6, $v0         #nhap n
+	move $t6, $v0         	#nhap n
 	li $v0, 4
 	
 	
@@ -31,8 +31,8 @@ loop:
 
 cal:
 	li $t0, 0			#i
-	lw $s0, myArray($t0) 	#max = A[0]
-	move $s2, $s0 		#min = A[0]
+	lw $s0, myArray($t0) 		#max = A[0]
+	move $s2, $s0 			#min = A[0]
 	li $t1, 1 			#bắt đầu đếm từ vị trí 1
 	
 sum:
