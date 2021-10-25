@@ -5,17 +5,17 @@ array2: 	.word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
 size2: 		.word 16
 array3: 	.space 32
 size3: 		.word 8
-Mang: 	.asciiz "Nhap mang can lay du lieu(1,2,3) : "
+Mang: 		.asciiz "Nhap mang can lay du lieu(1,2,3) : "
 Ktra: 		.asciiz "Mang k hop le, hay nhap lai \n "
 Phantu1: 	.asciiz "Nhap vi tri phan tu (1->10) : "
 Phantu2: 	.asciiz "Nhap vi tri phan tu (1->16) : "
 Phantu3: 	.asciiz "Nhap vi tri phan tu (1->8) : "
 Xuat:		.asciiz "Phan tu co gia tri la : "
-Space: 	.asciiz " "
+Space: 		.asciiz " "
 Breakrow: 	.asciiz " \n"
 	
 .text
-Main:	
+main:	
 Nhapmang:
 	la $a0, Mang
 	li $v0, 4
@@ -86,10 +86,10 @@ Loop: 	lw $a0, ($t0)		# <=> arrray2[i]
 	subi $t2, $t2, 4	#(size2 -1) - i
 	lw $a1, ($t2)		# <=> arrray2[size2 - 1 - i]
 	add $a0, $a0, $a1	# <=> array2[i] + array2[size2 - 1 - i]
-	sw $a0, 0($t3)	#lưu vào array3[i]
+	sw $a0, 0($t3)		#lưu vào array3[i]
 	addi $t3, $t3, 4	#địa chỉ phần tử tiếp theo trong mảng 3 <=> i++
 	slt $t6, $t3, $t5	
-	beq $t6, $zero,Check#t6=1 <=> đủ 8 phần tử trong array3 sẽ out loop
+	beq $t6, $zero,Check	#t6=1 <=> đủ 8 phần tử trong array3 sẽ out loop
 	addi $t0, $t0, 4	#địa chỉ phần tử tiếp theo trong mảng 2 <=> i++
 	slt $t7, $t0, $t2
 	bne $t7, $zero, Loop	#t7=1 <=> i < size2, tiếp tục loop
@@ -113,4 +113,4 @@ Check:
 	
 	
 	
-End: 	
+end: 	
