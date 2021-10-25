@@ -32,7 +32,8 @@ main:
 	
 	subi $t2, $t2, 4	#size2 – 1
 
-Loop: 	lw $a0, ($t0)		# <=> arrray2[i] 
+Loop: 	
+	lw $a0, ($t0)		# <=> arrray2[i] 
 	subi $t2, $t2, 4	#(size2 -1) - i
 	lw $a1, ($t2)		# <=> arrray2[size2 - 1 - i]
 	add $a0, $a0, $a1	# <=> array2[i] + array2[size2 - 1 - i]
