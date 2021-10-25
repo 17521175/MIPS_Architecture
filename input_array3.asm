@@ -1,17 +1,17 @@
 .data
 array1: 	.word 5, 6, 7, 8, 1, 2, 3, 9, 10, 4
 size1: 		.word 10
-array2:	.word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+array2:		.word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
 size2: 		.word 16
 array3: 	.space 32
 size3: 		.word 8
-Xuat3: 	.asciiz "Cac phan tu cua mang 3 la : "
-Mang3: 	.asciiz "Phan tu mang 3 co dang : array3[i] = array2[i] + array2[size2 - 1 - i]"
-Space: 	.asciiz " "
+Xuat3: 		.asciiz "Cac phan tu cua mang 3 la : "
+Mang3: 		.asciiz "Phan tu mang 3 co dang : array3[i] = array2[i] + array2[size2 - 1 - i]"
+Space: 		.asciiz " "
 Breakrow: 	.asciiz " \n"
 	
 .text
-Main:	
+main:	
 	la $a0, Mang3
 	li $v0, 4
 	syscall
@@ -36,7 +36,7 @@ Loop: 	lw $a0, ($t0)		# <=> arrray2[i]
 	subi $t2, $t2, 4	#(size2 -1) - i
 	lw $a1, ($t2)		# <=> arrray2[size2 - 1 - i]
 	add $a0, $a0, $a1	# <=> array2[i] + array2[size2 - 1 - i]
-	sw $a0, 0($t3)	#lưu vào array3[i]
+	sw $a0, 0($t3)		#lưu vào array3[i]
 	li $v0, 1
 	syscall
 	la $a0, Space
@@ -49,4 +49,4 @@ Loop: 	lw $a0, ($t0)		# <=> arrray2[i]
 	slt $t7, $t0, $t2
 	bne $t7, $zero, Loop	#t7=1 <=> i < size2, tiếp tục loop
 	
-End: 	#Kết quả luôn là 16 vì theo công thức có 1+15 = 2+14 = 3+13 = ...
+end: 				#Kết quả luôn là 16 vì theo công thức có 1+15 = 2+14 = 3+13 = ...
